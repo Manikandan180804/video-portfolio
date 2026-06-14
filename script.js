@@ -33,11 +33,27 @@ let isTalking = false;
 let talkTimer  = null;
 let utterance  = null;
 
-// The speech text Gandhi's avatar will say
-const introText = `Hi there! I'm Gandhi Manikandan, an AI Developer and B.Tech student in AI and Data Science. 
-I build autonomous agents, LLM pipelines, and full-stack AI applications — systems that act, not just generate text. 
-I've interned at Prodapt Solutions engineering LLM-powered automation, and I've shipped projects like Aether, an autonomous web browser agent, and MineGuard AI, a real-time mine safety platform. 
-I've solved over 200 LeetCode problems and hold a CGPA of 8.09. Let's build something great together!`;
+// The speech text — cinematic "About Me" video style
+const introText = `
+What if your software could think for itself?
+
+My name is Gandhi Manikandan. I'm an AI Developer — and I don't just write code. I build systems that reason, plan, and act on their own.
+
+I'm pursuing B.Tech in Artificial Intelligence and Data Science at SRM TRP Engineering College, with a CGPA of 8 point 0 9 out of 10.
+
+At Prodapt Solutions, I engineered tool-calling LLM agents that automated enterprise delivery workflows — reducing manual handoffs across entire reporting pipelines.
+
+I've shipped five production-grade AI projects. Aether — an autonomous browser agent that navigates live websites with zero hardcoded rules. A multi-agent NOC system using LangGraph that detects anomalies and auto-generates incident reports. An AI-augmented SDLC platform that embeds LLM agents at every phase of software development. And MineGuard AI — a real-time mine safety system powered by YOLOv11 and live sensor data.
+
+My stack? Python. LangChain. LangGraph. React. Flask. MongoDB. And a passion for building things that actually work.
+
+Two hundred plus LeetCode problems solved. Four hundred plus on CodeChef. Twenty four public repositories on GitHub.
+
+I don't just follow AI trends. I build with them.
+
+If you're looking for someone who ships autonomous AI systems — let's talk.
+`;
+
 
 function showTalkingVisuals() {
   if (mouthOverlay) mouthOverlay.classList.add('talking');
@@ -93,15 +109,15 @@ function startTalking() {
 
   if (maleVoice) utterance.voice = maleVoice;
 
-  // Force lower pitch to sound masculine regardless of voice chosen
+  // Force lower pitch + slower dramatic pace for video reel feel
   utterance.pitch  = 0.75;
-  utterance.rate   = 0.92;
+  utterance.rate   = 0.88;   // slower = more dramatic, like a voiceover
 
   // When speech ends naturally — stop visuals
   utterance.onend = () => hideTalkingVisuals();
 
-  // Safety fallback: if speech stalls (mobile), stop after 35s
-  talkTimer = setTimeout(stopTalking, 35000);
+  // Safety fallback — longer script needs ~70s
+  talkTimer = setTimeout(stopTalking, 75000);
 
   window.speechSynthesis.speak(utterance);
 }
