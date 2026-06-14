@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gandhi Manikandan A — AI Developer Portfolio</title>
+  <meta name="description" content="Gandhi Manikandan A — AI Developer & B.Tech AI & Data Science student building autonomous agents, LLM pipelines, and full-stack applications." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- INTRO SPLASH SCREEN -->
+  <div id="splash-screen">
+    <div class="splash-content">
+      <div class="splash-name" id="splash-name">
+        <span class="splash-text">GANDHI MANIKANDAN A</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-logo">Gandhi<span class="dot">.</span></div>
+    <ul class="nav-links">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#expertise" class="nav-link">Expertise</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="mailto:gandhimanikandan1@gmail.com" class="hire-btn" id="hire-btn">Hire Me</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Hi, I'm a<br/>
+        <span class="hero-role">AI Developer</span>
+      </h1>
+      <p class="hero-subtitle">I build autonomous agents, LLM pipelines, and full-stack AI applications — systems that act, not just generate.</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn-white" id="view-work-btn">View My Work</a>
+        <a href="#contact" class="btn-outline" id="contact-me-btn">Contact Me</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <!-- Talking avatar wrapper -->
+      <div class="avatar-talking-wrap" id="avatar-wrap">
+        <img src="hero.png" alt="Gandhi Manikandan A — AI Developer" class="avatar-img" id="avatar-img" />
+        <!-- Animated mouth overlay on the avatar -->
+        <div class="avatar-mouth-overlay" id="mouth-overlay">
+          <div class="mouth-bar" style="animation-delay:0s"></div>
+          <div class="mouth-bar" style="animation-delay:0.08s"></div>
+          <div class="mouth-bar" style="animation-delay:0.16s"></div>
+          <div class="mouth-bar" style="animation-delay:0.04s"></div>
+          <div class="mouth-bar" style="animation-delay:0.12s"></div>
+        </div>
+        <!-- Sound wave rings -->
+        <div class="sound-rings" id="sound-rings">
+          <div class="ring ring-1"></div>
+          <div class="ring ring-2"></div>
+          <div class="ring ring-3"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Mute/Unmute Reel button matching reference -->
+    <button class="mute-btn" id="mute-btn" aria-label="Toggle sound">
+      <div class="mute-icon-wrap" id="mute-icon-wrap">
+        <!-- Muted icon (X on speaker) -->
+        <svg id="icon-muted" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+        <!-- Unmuted icon (sound waves) -->
+        <svg id="icon-unmuted" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+      </div>
+      <span id="mute-label">UNMUTE REEL</span>
+    </button>
+    <div class="scroll-indicator">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about">
+    <div class="about-image-wrap">
+      <div class="about-frame">
+        <img src="avatar.jpg" alt="Gandhi Manikandan A" class="about-photo" />
+      </div>
+    </div>
+    <div class="about-content">
+      <div class="sparkle">✦</div>
+      <h2 class="about-hello">Hello!</h2>
+      <p class="about-text">
+        Hi, my name is <strong>GANDHI MANIKANDAN A</strong>, an AI engineer who builds systems that act autonomously — not just generate text. Pursuing B.Tech in AI & Data Science at SRM TRP Engineering College, with a CGPA of 8.09/10.0. I specialize in crafting LLM-powered automation, multi-agent architectures, and computer vision safety systems.
+      </p>
+      <div class="about-tech-icons">
+        <div class="tech-icon" title="Python">
+          <svg viewBox="0 0 24 24" fill="#3776AB"><path d="M14.25 2.26c-5.1-.47-9.75 1.55-9.75 6.74v1.5h6v.75H4.5s-4.5.51-4.5 6.02C0 21.61 3.3 24 7.5 24h1.5v-2.25c0-3.09 2.68-4.5 5.25-4.5h4.5c2.07 0 3.75-1.68 3.75-3.75V6.77c0-1.95-1.65-3.2-3.75-3.35zM11.25 5.25a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"/><path d="M9.75 21.74c5.1.47 9.75-1.55 9.75-6.74v-1.5H13.5v-.75h6S24 12.24 24 6.73C24 2.39 20.7 0 16.5 0H15v2.25c0 3.09-2.68 4.5-5.25 4.5H5.25C3.18 6.75 1.5 8.43 1.5 10.5v7.23c0 1.95 1.65 3.2 3.75 3.35zM12.75 18.75a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"/></svg>
+        </div>
+        <div class="tech-icon" title="LangChain">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1C3D5A" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14l-4-4 1.41-1.41L10 13.17l6.59-6.59L18 8l-8 8z"/></svg>
+        </div>
+        <div class="tech-icon react-icon" title="React">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.5" fill="#61DAFB"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.5" fill="none"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.5" fill="none" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.5" fill="none" transform="rotate(120 12 12)"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE SECTION -->
+  <section id="expertise" class="expertise">
+    <div class="expertise-left">
+      <span class="section-tag">My Expertise</span>
+      <h2 class="expertise-title">Building<br/>Modern AI<br/>Solutions with<br/>Impact</h2>
+    </div>
+    <div class="expertise-cards">
+      <div class="expertise-card" id="exp-card-1">
+        <span class="card-number">01</span>
+        <h3>Agentic AI Systems</h3>
+        <p>Designing autonomous multi-agent pipelines using LangChain and LangGraph — agents that plan, reason, and execute across tools with zero hardcoded rules.</p>
+      </div>
+      <div class="expertise-card" id="exp-card-2">
+        <span class="card-number">02</span>
+        <h3>LLM Engineering</h3>
+        <p>Fine-tuning models (GPT-2, HuggingFace), building RAG pipelines with ChromaDB/FAISS, and integrating Gemini, OpenAI APIs into production Flask/Node apps.</p>
+      </div>
+      <div class="expertise-card" id="exp-card-3">
+        <span class="card-number">03</span>
+        <h3>Full Stack Development</h3>
+        <p>Building end-to-end web applications with React, Node.js, MongoDB, Flask — from prompt design to frontend integration across multiple sprint cycles.</p>
+      </div>
+      <div class="expertise-card" id="exp-card-4">
+        <span class="card-number">04</span>
+        <h3>Computer Vision & ML</h3>
+        <p>Deploying YOLOv11 for structural safety detection, building Random Forest & Logistic Regression classifiers, and automating Python data pipelines.</p>
+      </div>
+    </div>
+    <div class="handwriting-text">Turning ideas into reality!</div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="skills">
+    <span class="section-tag">Technical Stack</span>
+    <h2 class="section-title">Technologies I Work With</h2>
+    <p class="section-subtitle">Full-stack expertise across AI/ML, modern development, and cloud infrastructure.</p>
+    <div class="skills-grid">
+      <div class="skill-card" id="skill-ai">
+        <h4>AI / ML</h4>
+        <div class="skill-tags">
+          <span>LLMs</span><span>Agentic AI</span><span>RAG Pipelines</span><span>Fine-tuning</span><span>NLP</span><span>Computer Vision</span><span>YOLOv11</span>
+        </div>
+      </div>
+      <div class="skill-card" id="skill-frameworks">
+        <h4>Frameworks</h4>
+        <div class="skill-tags">
+          <span>LangChain</span><span>LangGraph</span><span>Flask</span><span>React</span><span>Node.js</span><span>Next.js</span>
+        </div>
+      </div>
+      <div class="skill-card" id="skill-languages">
+        <h4>Languages</h4>
+        <div class="skill-tags">
+          <span>Python</span><span>JavaScript</span><span>TypeScript</span><span>SQL</span>
+        </div>
+      </div>
+      <div class="skill-card" id="skill-tools">
+        <h4>Tools & Cloud</h4>
+        <div class="skill-tags">
+          <span>Git</span><span>MongoDB</span><span>FAISS</span><span>ChromaDB</span><span>Jupyter</span><span>VS Code</span><span>Docker</span><span>Playwright</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="projects">
+    <span class="section-tag">Featured Work</span>
+    <h2 class="projects-title">Projects That Define<br/>My Journey</h2>
+    <p class="section-subtitle">A curated portfolio of autonomous AI agents, LLM-powered platforms, and full-stack systems built for scale and real impact.</p>
+    <div class="projects-grid">
+
+      <div class="project-card" id="proj-aether">
+        <div class="card-top-dot"></div>
+        <div class="proj-tags"><span>AGENTIC AI</span> • <span>PLAYWRIGHT</span></div>
+        <h3>Aether – Autonomous Web Browser Agent</h3>
+        <p>Built an agent that navigated live websites, clicked interactive elements, and extracted structured data through multi-step planning — zero hardcoded selectors or scraping rules.</p>
+        <div class="proj-tech"><span>Python</span><span>LangChain</span><span>Playwright</span><span>Agentic AI</span></div>
+        <a href="https://github.com/Manikandan180804/Aether---the-web-browser-agent-" target="_blank" rel="noopener" class="proj-link" id="aether-link">Source Code ↗</a>
+      </div>
+
+      <div class="project-card" id="proj-noc">
+        <div class="card-top-dot"></div>
+        <div class="proj-tags"><span>MULTI-AGENT</span> • <span>GENAI</span></div>
+        <h3>NOC System using GenAI & Agentic AI</h3>
+        <p>Orchestrated a LangGraph multi-agent pipeline where specialized agents detected anomalies, triaged severity, and auto-generated incident reports — mimicking a full NOC analyst workflow.</p>
+        <div class="proj-tech"><span>Python</span><span>LangGraph</span><span>Gemini AI</span></div>
+        <a href="https://github.com/Manikandan180804/NOC-system-using-GENAI-and-Agentic-AI" target="_blank" rel="noopener" class="proj-link" id="noc-link">Source Code ↗</a>
+      </div>
+
+      <div class="project-card" id="proj-sdlc">
+        <div class="card-top-dot"></div>
+        <div class="proj-tags"><span>LLM</span> • <span>AUTOMATION</span></div>
+        <h3>AI-Augmented SDLC Platform</h3>
+        <p>Embedded LLM agents at every SDLC phase — requirements parsing, test case generation, code review, and deployment summaries — cutting manual documentation effort across the dev lifecycle.</p>
+        <div class="proj-tech"><span>Python</span><span>LangChain</span><span>React</span><span>Flask</span></div>
+        <a href="https://github.com/Manikandan180804/AI-Augmented-SDLC-platform" target="_blank" rel="noopener" class="proj-link" id="sdlc-link">Source Code ↗</a>
+      </div>
+
+      <div class="project-card" id="proj-gpt2">
+        <div class="card-top-dot"></div>
+        <div class="proj-tags"><span>FINE-TUNING</span> • <span>NLP</span></div>
+        <h3>GPT-2 Fine-Tuned Product Description Generator</h3>
+        <p>Fine-tuned GPT-2 (124M params) on e-commerce dataset with fp16 + gradient checkpointing; trained on consumer GPU in under 3 hrs.</p>
+        <div class="proj-tech"><span>Python</span><span>HuggingFace</span><span>PyTorch</span></div>
+        <a href="https://github.com/Manikandan180804/Fine-tuning-GPT-2-for-product-Description-Generation-" target="_blank" rel="noopener" class="proj-link" id="gpt2-link">Source Code ↗</a>
+      </div>
+
+      <div class="project-card featured" id="proj-mineguard">
+        <div class="card-top-dot"></div>
+        <div class="proj-tags"><span>COMPUTER VISION</span> • <span>IOT</span></div>
+        <h3>MineGuard AI – Mine Safety Monitoring System</h3>
+        <p>Deployed a real-time safety platform that fused YOLOv11 structural crack detection, multi-sensor IoT streams (displacement, pore pressure, strain), and live weather data into a unified risk score — with an Ollama-powered chat assistant for on-demand incident guidance.</p>
+        <div class="proj-tech"><span>Python</span><span>Flask</span><span>YOLOv11</span><span>Ollama</span><span>Agentic AI</span></div>
+        <a href="https://github.com/Manikandan180804/final-year-project" target="_blank" rel="noopener" class="proj-link" id="mineguard-link">Source Code ↗</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION -->
+  <section id="experience" class="experience">
+    <span class="section-tag">Work History</span>
+    <h2 class="section-title">Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item" id="exp-prodapt">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="exp-meta">
+            <span class="exp-company">Prodapt Solutions Pvt Ltd, Chennai</span>
+            <span class="exp-date">Feb 2026 – May 2026</span>
+          </div>
+          <h3 class="exp-role">AI Developer Intern</h3>
+          <ul>
+            <li>Designed and deployed tool-calling LLM agents that automated repetitive steps in enterprise delivery workflows, reducing manual handoffs across internal reporting pipelines.</li>
+            <li>Prototyped structured report generation and document summarization features using generative AI; outputs were adopted into internal tooling used by delivery teams.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item" id="exp-warriors">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="exp-meta">
+            <span class="exp-company">Warriors Way Hub</span>
+            <span class="exp-date">Aug 2024 – Nov 2024</span>
+          </div>
+          <h3 class="exp-role">Generative AI & Full Stack Trainee</h3>
+          <ul>
+            <li>Wired Gemini and OpenAI APIs into production Flask applications, building MongoDB backends that managed conversation state, prompt versioning, and user session persistence.</li>
+            <li>Owned full delivery of AI features from prompt design to frontend integration, shipping end-to-end across multiple sprint cycles with no hand-off gaps.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item" id="exp-novitech">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="exp-meta">
+            <span class="exp-company">NOVITECH R&D</span>
+            <span class="exp-date">Mar 2024 – Jul 2024</span>
+          </div>
+          <h3 class="exp-role">AI & Data Analytics Intern</h3>
+          <ul>
+            <li>Built Random Forest and Logistic Regression classifiers; automated Python data pipelines reducing manual effort by ~40%.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact">
+    <div class="contact-bg-text">CONTACT</div>
+    <div class="contact-form-wrap">
+      <p class="contact-label">REACH ME</p>
+      <div class="contact-grid">
+        <div class="contact-fields">
+          <input type="text" id="contact-firstname" placeholder="First Name" class="contact-input" />
+          <input type="text" id="contact-lastname" placeholder="Last Name" class="contact-input" />
+          <input type="email" id="contact-email" placeholder="Email" class="contact-input" />
+        </div>
+        <div class="contact-message">
+          <textarea id="contact-message" placeholder="Type your message here..." class="contact-textarea"></textarea>
+          <button class="contact-submit" id="contact-submit">Send Message</button>
+        </div>
+      </div>
+      <div class="contact-info">
+        <a href="mailto:gandhimanikandan1@gmail.com" class="contact-link">gandhimanikandan1@gmail.com</a>
+        <a href="tel:+916381227161" class="contact-link">+91 6381227161</a>
+        <a href="https://github.com/" target="_blank" class="contact-link">GitHub ↗</a>
+        <a href="https://linkedin.com/" target="_blank" class="contact-link">LinkedIn ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 Gandhi Manikandan A. All rights reserved.</p>
+    <p class="footer-sub">B.Tech AI & Data Science · SRM TRP Engineering College</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
