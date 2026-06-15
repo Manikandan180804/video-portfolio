@@ -21,122 +21,59 @@
 })();
 
 
-// ===== TALKING AVATAR + VOICE =====
-const mouthOverlay = document.getElementById('mouth-overlay');
+// ===== REAL VIDEO AVATAR CONTROLS =====
+const avatarVideo  = document.getElementById('avatar-video');
 const soundRings   = document.getElementById('sound-rings');
 const muteBtn      = document.getElementById('mute-btn');
 const muteLabel    = document.getElementById('mute-label');
 const iconMuted    = document.getElementById('icon-muted');
 const iconUnmuted  = document.getElementById('icon-unmuted');
 
-let isTalking = false;
-let talkTimer  = null;
-let utterance  = null;
+let videoUnmuted = false;
 
-// The speech text — cinematic "About Me" video style
-const introText = `
-What if your software could think for itself?
-
-My name is Gandhi Manikandan. I'm an AI Developer — and I don't just write code. I build systems that reason, plan, and act on their own.
-
-I'm pursuing B.Tech in Artificial Intelligence and Data Science at SRM TRP Engineering College, with a CGPA of 8 point 0 9 out of 10.
-
-At Prodapt Solutions, I engineered tool-calling LLM agents that automated enterprise delivery workflows — reducing manual handoffs across entire reporting pipelines.
-
-I've shipped five production-grade AI projects. Aether — an autonomous browser agent that navigates live websites with zero hardcoded rules. A multi-agent NOC system using LangGraph that detects anomalies and auto-generates incident reports. An AI-augmented SDLC platform that embeds LLM agents at every phase of software development. And MineGuard AI — a real-time mine safety system powered by YOLOv11 and live sensor data.
-
-My stack? Python. LangChain. LangGraph. React. Flask. MongoDB. And a passion for building things that actually work.
-
-Two hundred plus LeetCode problems solved. Four hundred plus on CodeChef. Twenty four public repositories on GitHub.
-
-I don't just follow AI trends. I build with them.
-
-If you're looking for someone who ships autonomous AI systems — let's talk.
-`;
-
-
-function showTalkingVisuals() {
-  if (mouthOverlay) mouthOverlay.classList.add('talking');
-  if (soundRings)   soundRings.classList.add('active');
-  if (muteBtn)      muteBtn.classList.add('is-talking');
-  if (muteLabel)    muteLabel.textContent = 'MUTE SOUND';
-  if (iconMuted)    iconMuted.style.display   = 'none';
-  if (iconUnmuted)  iconUnmuted.style.display = '';
+function setUnmutedUI(unmuted) {
+  videoUnmuted = unmuted;
+  if (soundRings)  soundRings.classList.toggle('active', unmuted);
+  if (muteBtn)     muteBtn.classList.toggle('is-talking', unmuted);
+  if (muteLabel)   muteLabel.textContent = unmuted ? 'MUTE REEL' : 'UNMUTE REEL';
+  if (iconMuted)   iconMuted.style.display   = unmuted ? 'none' : '';
+  if (iconUnmuted) iconUnmuted.style.display = unmuted ? '' : 'none';
 }
 
-function hideTalkingVisuals() {
-  if (mouthOverlay) mouthOverlay.classList.remove('talking');
-  if (soundRings)   soundRings.classList.remove('active');
-  if (muteBtn)      muteBtn.classList.remove('is-talking');
-  if (muteLabel)    muteLabel.textContent = 'UNMUTE REEL';
-  if (iconMuted)    iconMuted.style.display   = '';
-  if (iconUnmuted)  iconUnmuted.style.display = 'none';
-  isTalking = false;
+// Ensure video plays on load (autoplay muted)
+if (avatarVideo) {
+  avatarVideo.muted = true;
+  avatarVideo.play().catch(() => {});
+
+  // Pulse the button after splash to invite interaction
+  setTimeout(() => {
+    if (muteBtn) muteBtn.style.animation = 'mutePulse 1.5s ease-in-out 3';
+  }, 3800);
 }
 
-function startTalking() {
-  if (isTalking) return;
-
-  // Cancel any previous speech
-  window.speechSynthesis.cancel();
-
-  isTalking = true;
-  showTalkingVisuals();
-
-  // Build the utterance
-  utterance = new SpeechSynthesisUtterance(introText);
-  utterance.volume = 1.0;
-
-  // Pick a MALE English voice
-  const voices = window.speechSynthesis.getVoices();
-
-  // Priority list of known male voice name keywords across browsers
-  const maleKeywords = [
-    'Male', 'David', 'James', 'Daniel', 'Alex', 'Google UK English Male',
-    'Google US English', 'Microsoft David', 'Microsoft James',
-    'Microsoft Guy', 'Aaron', 'Fred', 'Bruce', 'Albert', 'Rishi', 'Moira',
-    'Thomas', 'Jorge', 'Carlos', 'Oliver', 'Arthur'
-  ];
-
-  let maleVoice =
-    // 1. Exact keyword match in name, English language
-    voices.find(v => v.lang.startsWith('en') && maleKeywords.some(k => v.name.includes(k))) ||
-    // 2. Any English voice not containing "Female" or "woman" or female names
-    voices.find(v => v.lang.startsWith('en') && !/female|woman|zira|hazel|susan|victoria|karen|samantha|fiona|tessa|veena|Monica|Nicky/i.test(v.name)) ||
-    // 3. Any English voice as last resort
-    voices.find(v => v.lang.startsWith('en')) ||
-    voices[0];
-
-  if (maleVoice) utterance.voice = maleVoice;
-
-  // Force lower pitch + slower dramatic pace for video reel feel
-  utterance.pitch  = 0.75;
-  utterance.rate   = 0.88;   // slower = more dramatic, like a voiceover
-
-  // When speech ends naturally — stop visuals
-  utterance.onend = () => hideTalkingVisuals();
-
-  // Safety fallback — longer script needs ~70s
-  talkTimer = setTimeout(stopTalking, 75000);
-
-  window.speechSynthesis.speak(utterance);
-}
-
-function stopTalking() {
-  clearTimeout(talkTimer);
-  window.speechSynthesis.cancel();
-  hideTalkingVisuals();
-}
-
-// Some browsers load voices async — wait for them
-if (typeof window.speechSynthesis !== 'undefined') {
-  window.speechSynthesis.onvoiceschanged = () => { /* voices ready */ };
-}
-
-// Toggle on button click
-if (muteBtn) {
+// Toggle mute/unmute on button click
+if (muteBtn && avatarVideo) {
   muteBtn.addEventListener('click', () => {
-    isTalking ? stopTalking() : startTalking();
+    if (videoUnmuted) {
+      // Mute
+      avatarVideo.muted = true;
+      setUnmutedUI(false);
+    } else {
+      // Unmute — restart from beginning for a clean experience
+      avatarVideo.currentTime = 0;
+      avatarVideo.muted = false;
+      avatarVideo.loop = false;
+      avatarVideo.play().catch(() => {});
+      setUnmutedUI(true);
+
+      // When video ends, go back to muted loop
+      avatarVideo.onended = () => {
+        avatarVideo.muted = true;
+        avatarVideo.loop = true;
+        avatarVideo.play().catch(() => {});
+        setUnmutedUI(false);
+      };
+    }
   });
 }
 

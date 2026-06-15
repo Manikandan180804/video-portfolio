@@ -53,18 +53,21 @@
       </div>
     </div>
     <div class="hero-image">
-      <!-- Talking avatar wrapper -->
+      <!-- Real video avatar wrapper -->
       <div class="avatar-talking-wrap" id="avatar-wrap">
-        <img src="hero.png" alt="Gandhi Manikandan A — AI Developer" class="avatar-img" id="avatar-img" />
-        <!-- Animated mouth overlay on the avatar -->
-        <div class="avatar-mouth-overlay" id="mouth-overlay">
-          <div class="mouth-bar" style="animation-delay:0s"></div>
-          <div class="mouth-bar" style="animation-delay:0.08s"></div>
-          <div class="mouth-bar" style="animation-delay:0.16s"></div>
-          <div class="mouth-bar" style="animation-delay:0.04s"></div>
-          <div class="mouth-bar" style="animation-delay:0.12s"></div>
-        </div>
-        <!-- Sound wave rings -->
+        <!-- Real recorded intro video -->
+        <video
+          id="avatar-video"
+          class="avatar-video"
+          src="Welcome_to_my_portfolio_I_am (1).mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          aria-label="Gandhi Manikandan A — AI Developer intro video"
+        ></video>
+        <!-- Sound wave rings (shown when unmuted) -->
         <div class="sound-rings" id="sound-rings">
           <div class="ring ring-1"></div>
           <div class="ring ring-2"></div>
@@ -73,7 +76,7 @@
       </div>
     </div>
     <!-- Mute/Unmute Reel button matching reference -->
-    <button class="mute-btn" id="mute-btn" aria-label="Toggle sound">
+    <button class="mute-btn" id="mute-btn" aria-label="Toggle video sound">
       <div class="mute-icon-wrap" id="mute-icon-wrap">
         <!-- Muted icon (X on speaker) -->
         <svg id="icon-muted" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
